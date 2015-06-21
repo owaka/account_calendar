@@ -8,7 +8,11 @@ get '/' do
   @items = Item.all
   @total = Item.sum(:price)
   @categories = Category.all
-  erb :index
+  erb:index
+end
+
+post '/' do
+  "Hello World"
 end
 
 post '/create' do
@@ -17,7 +21,7 @@ post '/create' do
       price: params[:price],
       category_id: params[:category]
   })
-  
+
   redirect '/'
 end
 
